@@ -1,0 +1,6 @@
+flask
+gunicorn
+numpy
+python-dotenv
+dashscope
+qdrant-client

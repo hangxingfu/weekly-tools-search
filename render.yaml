@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: ryf-search
+    runtime: python
+    plan: free
+    buildCommand: pip install --upgrade pip && pip install -r requirements.txt
+    startCommand: gunicorn --workers 1 --timeout 120 --bind 0.0.0.0:$PORT app:app
+    healthCheckPath: /api/meta
+    autoDeploy: true
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: DASHSCOPE_URL
+        value: https://dashscope.aliyuncs.com/api/v1
+      - key: DASHSCOPE_API_KEY
+        sync: false
+      - key: QDRANT_URL
+        sync: false
+      - key: QDRANT_API_KEY
+        sync: false

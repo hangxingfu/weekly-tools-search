@@ -1,0 +1,25 @@
+# 密钥与本地配置
+.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+venv/
+.venv/
+
+# 前端依赖（dist 需保留，用于线上托管）
+front/node_modules/
+
+# 生成的向量数据（线上走 Qdrant，无需入库）
+vectors.jsonl
+
+# 系统文件
+.DS_Store
+
+.claude
+weekly
+front
+extract_embed_local.py
+upload_vectors_to_qdrant.py
+note.txt
